@@ -1,0 +1,29 @@
+.profile__pic-edit{
+  margin: 0;
+  align-self: stretch;
+  width: 24px;
+  height: 24px;
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  background-image: url(../../../image/Vector.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: none;
+  }
+.profile__pic-edit:hover{
+  cursor: pointer;
+  opacity: 0.5;
+}
+@media screen and (min-width: 420px) and (max-width: 767px){
+  .profile__pic-edit{
+  align-self: center;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 419px){
+  .profile__pic-edit{
+  width: 18px;
+  height: 18px;
+  align-self: center;
+  }
+}

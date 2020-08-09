@@ -1,0 +1,12 @@
+.element__like{
+  width: 21px;
+  height: 19px;
+  margin: 6px 7.24px 1.13px 0px;
+  background-color: #ffffff;
+  border: 0;
+  background-image: url(../../../image/like.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: none;
+}
