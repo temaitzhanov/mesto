@@ -12,7 +12,7 @@
   border: 0;
   border-radius: 2px;
   outline: none;
-  background-image: url(../../../image/Close\ Icon.png);
+  background-image: url(../../../image/Closу_Icon.svg);
 }
 .popup__close:hover{
   cursor: pointer;
