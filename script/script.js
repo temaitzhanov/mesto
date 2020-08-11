@@ -1,3 +1,4 @@
+//Переменные
 let popup = document.querySelector('.popup');
 let popupOpenButton = document.querySelector('.profile__pic-edit');
 let popupCloseButton = popup.querySelector('.popup__close');
@@ -13,9 +14,6 @@ let popupToggle = function(event){
   event.preventDefault();
   popup.classList.toggle('popup__openede');
 }
-//События на кнопки закрытия и открытие Pop-Up
-popupOpenButton.addEventListener('click', popupToggle);
-popupCloseButton.addEventListener('click', popupToggle);
 //Функция по закрытию Pop-up нажатием в любую область
 let closePopup = function(){
   if(event.target !== event.currentTarget){
@@ -23,8 +21,6 @@ let closePopup = function(){
   }
   popupToggle(event);
 }
-//Событие
-popup.addEventListener('click', closePopup);
 //Функция считывает значение value
 function ReadValue(evt){
   evt.preventDefault();
@@ -37,6 +33,9 @@ function formSubmitHandler (evt) {
     name.textContent = nameInput.value;
     profession.textContent = jobInput.value;
 }
-//События формы и кнопки submit
+//События
 form.addEventListener('click', formSubmitHandler);
 popupSaveButton.addEventListener('click', closePopup);
+popup.addEventListener('click', closePopup);
+popupOpenButton.addEventListener('click', popupToggle);
+popupCloseButton.addEventListener('click', popupToggle);
