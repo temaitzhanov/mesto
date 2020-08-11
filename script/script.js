@@ -4,8 +4,8 @@ let popupCloseButton = popup.querySelector('.popup__close');
 let popupSaveButton = document.querySelector('.popup__submit');
 let page = document.querySelector('.page');
 let form = popup.querySelector('.popup__form');
-let nameInput = form.querySelector('.popup__name');
-let jobInput = form.querySelector('.popup__workplace');
+let nameInput = form.querySelector('.popup__input_name');
+let jobInput = form.querySelector('.popup__input_work-place');
 let name = document.querySelector('.profile__name');
 let profession = document.querySelector('.profile__profession');
 //Функция меняющая класс по нажатию
@@ -13,9 +13,6 @@ let popupToggle = function(event){
   event.preventDefault();
   popup.classList.toggle('popup__opened');
 }
-//События на кнопки закрытия и открытие Pop-Up
-popupOpenButton.addEventListener('click', popupToggle);
-popupCloseButton.addEventListener('click', popupToggle);
 //Функция по закрытию Pop-up нажатием в любую область
 let closePopup = function(){
   if(event.target !== event.currentTarget){
@@ -23,8 +20,6 @@ let closePopup = function(){
   }
   popupToggle(event);
 }
-//Событие
-popup.addEventListener('click', closePopup);
 //Функция считывает значение value
 function ReadValue(evt){
   evt.preventDefault();
@@ -37,7 +32,10 @@ function formSubmitHandler (evt) {
     name.textContent = nameInput.value;
     profession.textContent = jobInput.value;
 }
-//События формы и кнопки submit
+//Событие
+popup.addEventListener('click', closePopup);
+popupOpenButton.addEventListener('click', popupToggle);
+popupCloseButton.addEventListener('click', popupToggle);
 popupSaveButton.addEventListener('click', formSubmitHandler);
 popupSaveButton.addEventListener('click', closePopup);
 
