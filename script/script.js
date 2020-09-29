@@ -1,41 +1,25 @@
-let popup = document.querySelector('.popup');
-let popupOpenButton = document.querySelector('.profile__pic-edit');
-let popupCloseButton = popup.querySelector('.popup__close');
-let popupSaveButton = document.querySelector('.popup__submit');
-let page = document.querySelector('.page');
-let form = popup.querySelector('.popup__form');
-let nameInput = form.querySelector('.popup__input_name');
-let jobInput = form.querySelector('.popup__input_work-place');
-let name = document.querySelector('.profile__name');
-let profession = document.querySelector('.profile__profession');
-//Функция меняющая класс по нажатию
-let popupToggle = function(event){
+let blockPopup = document.querySelector('.popup');
+let openBlockPopup = document.querySelector('.profile__pic-edit');
+let closeBlockPopup = blockPopup.querySelector('.popup__close');
+let saveBlockPopup = blockPopup.querySelector('.popup__submit');
+let nameFromPage = document.querySelector('.profile__name');
+let jobFromPage = document.querySelector('.profile__profession');
+let nameFromForm = document.querySelector('.popup__input_name');
+let jobFromForm = document.querySelector('.popup__input_work-place');
+function togglePopup(event){
+  blockPopup.classList.toggle('popup__opened');
+}
+function closePopup(event){
+  nameFromForm.value = nameFromPage.textContent;
+  jobFromForm.value = jobFromPage.textContent;
+  togglePopup();
+}
+function savePopup (event){
   event.preventDefault();
-  popup.classList.toggle('popup__opened');
+  nameFromPage.textContent = nameFromForm.value;
+  jobFromPage.textContent = jobFromForm.value;
+  togglePopup();
 }
-//Функция по закрытию Pop-up нажатием в любую область
-let closePopup = function(){
-  if(event.target !== event.currentTarget){
-    return;
-  }
-  popupToggle(event);
-}
-//Функция считывает значение value
-function ReadValue(evt){
-  evt.preventDefault();
-  nameInput.value = document.getElementsByName('name')['0'].textContent;
-  jobInput.value = document.getElementsByName('job')['0'].textContent;
-}
-//Функция записывает значение value
-function formSubmitHandler (evt) {
-    evt.preventDefault();
-    name.textContent = nameInput.value;
-    profession.textContent = jobInput.value;
-}
-//Событие
-popup.addEventListener('click', closePopup);
-popupOpenButton.addEventListener('click', popupToggle);
-popupCloseButton.addEventListener('click', popupToggle);
-popupSaveButton.addEventListener('click', formSubmitHandler);
-popupSaveButton.addEventListener('click', closePopup);
-
+openBlockPopup.addEventListener('click', togglePopup);
+closeBlockPopup.addEventListener('click', closePopup);
+saveBlockPopup.addEventListener('click', savePopup);
