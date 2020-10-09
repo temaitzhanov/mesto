@@ -4,7 +4,6 @@
 @import url(../element/__name/element__name.css);
 .element{
   width: 282px;
-  height: 361px;
   background: #FFFFFF;
   border-radius: 10px;
 }
