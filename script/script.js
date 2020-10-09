@@ -5,14 +5,11 @@ let saveBlockPopup = blockPopup.querySelector('.popup__submit');
 let nameFromPage = document.querySelector('.profile__name');
 let jobFromPage = document.querySelector('.profile__profession');
 let nameFromForm = document.querySelector('.popup__input_name');
-let jobFromForm = document.querySelector('.popup__input_work-place');
-function togglePopup(event){
+let jobFromForm = document.querySelector('.popup__input_work');
+function togglePopup(){
   blockPopup.classList.toggle('popup_opened');
-}
-function closePopup(event){
   nameFromForm.value = nameFromPage.textContent;
   jobFromForm.value = jobFromPage.textContent;
-  togglePopup();
 }
 function savePopup (event){
   event.preventDefault();
@@ -21,5 +18,5 @@ function savePopup (event){
   togglePopup();
 }
 openBlockPopup.addEventListener('click', togglePopup);
-closeBlockPopup.addEventListener('click', closePopup);
-saveBlockPopup.addEventListener('click', savePopup);
+closeBlockPopup.addEventListener('click', togglePopup);
+blockPopup.addEventListener('submit', savePopup);
