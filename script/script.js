@@ -11,7 +11,7 @@ function togglePopup(){
   jobFromForm.value = jobFromPage.textContent;
 }
 function closePopup(){
-  blockPopup.classList.toggle('popup_opened');
+  blockPopup.classList.remove('popup_opened');
 }
 function savePopup (event){
   event.preventDefault();
