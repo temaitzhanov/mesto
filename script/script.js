@@ -17,7 +17,7 @@ function savePopup (event){
   event.preventDefault();
   nameFromPage.textContent = nameFromForm.value;
   jobFromPage.textContent = jobFromForm.value;
-  togglePopup();
+  closePopup();
 }
 openBlockPopup.addEventListener('click', togglePopup);
 closeBlockPopup.addEventListener('click', togglePopup);
